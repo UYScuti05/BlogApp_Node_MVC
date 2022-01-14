@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Heading -->
+    <h2 id="topHeading">Blog Site</h2>  
+
+    <!-- List -->
+    <div id="listDiv">
+        <div class="container">
+            <a href="/">
+                <button type="button" class="btn btn-success">All Blogs</button>
+            </a>
+        </div>
+
+        <h3 id="listHeading">Update Blog</h3>
+
+        <!-- Form -->
+        <div id="formDiv">
+            <form method="POST" id="updateBlogForm">
+                <!-- Input for Title -->
+                <div class="row mb-3">
+                    <div class="col-sm-1"></div>
+                    <label for="title" class="col-sm-3 col-form-label">Title :</label>
+                    <div class="col-sm-6">
+                        <input type="hidden" name="id" value="<%= blog._id%>">
+                        <input type="text" name="title" value="<%= blog.title%>" class="form-control" placeholder="Title" required>
+                    </div>
+                </div>
+
+                <!-- Input for category -->
+                <div class="row mb-3">
+                    <div class="col-sm-1"></div>
+                    <label for="category" class="col-sm-3 col-form-label">Category :</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="category" value="<%= blog.category%>" class="form-control" placeholder="Category" required>
+                    </div>
+                </div>
+                <!-- Input for Content -->
+                <div class="row mb-3">
+                    <div class="col-sm-1"></div>
+                    <label for="content" class="col-sm-3 col-form-label">Content :</label>
+                    <div class="col-sm-6">
+                        <textarea name="content" class="form-control" placeholder="Content" rows="5" required><%= blog.content%></textarea>
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="row mb-3" style="width: 50%;">
+                    <div class="col-sm-2"></div>
+                    <button type="submit" class="btn btn-primary col-sm-3 col-form-label">Update</button>
+                    <div class="col-sm-1"></div>
+                    <button type="reset" class="btn btn-danger col-sm-2">Clear</button>
+                </div>
+
+            </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>
